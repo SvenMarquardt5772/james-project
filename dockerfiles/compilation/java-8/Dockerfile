@@ -5,13 +5,14 @@
 FROM adoptopenjdk:11-jdk-hotspot
 
 ENV GIT_VERSION 1:2.11.0-3
+# Install Maven
+WORKDIR /root
+
 
 # Install git
 RUN apt-get update
 RUN apt-get install -y git wget unzip
 
-# Install Maven
-WORKDIR /root
 RUN wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
 RUN tar -xvf apache-maven-3.6.3-bin.tar.gz
 RUN ln -s /root/apache-maven-3.6.3/bin/mvn /usr/bin/mvn

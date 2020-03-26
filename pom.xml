@@ -3144,6 +3144,10 @@
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
                     <version>3.0.1</version>
+                    <configuration>
+                        <verbose>true</verbose>
+                        <skip>true</skip>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -3280,7 +3284,7 @@
                         <includeOnlyProperty>git.commit.message.short</includeOnlyProperty>
                         <includeOnlyProperty>git.dirty</includeOnlyProperty>
                     </includeOnlyProperties>
-                    <skip>false</skip>
+                    <skip>true</skip>
                     <useNativeGit>true</useNativeGit>
                     <gitDescribe>
                         <skip>false</skip>
