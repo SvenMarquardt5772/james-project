@@ -60,7 +60,8 @@ ls -al
 # Compilation
 
 if [ "$SKIPTESTS" = "skipTests" ]; then
-   mvn package -DskipTests
+   mvn package -DskipTests -pl :james-server-app -am || true
+   mvn package -DskipTests -pl :james-server-app -am -rf :james-server-app
 else
    mvn package ${MVN_ADDITIONAL_ARG_LINE}
 fi
